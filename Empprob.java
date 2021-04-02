@@ -4,16 +4,18 @@ public class Empprob{
   public static final int IS_PART_TIME = 2;
   public static final int ERPH = 20;
   public static final int NOWD = 20;
+  public static final int MHIM = 100;
 
 public static void main(String[] args){
 
     // Variables
      int emphrs = 0;
-     int empwage = 0;
-     int totalempwage = 0;
+     int totalemphrs = 0;
+     int totalworkingdays = 0;
 
     //Computation
-     for( int days = 1; days <= NOWD; days++){
+     while (totalemphrs <= MHIM && totalworkingdays < NOWD){
+     totalworkingdays++;
      int empCheck = (int) Math.floor(Math.random() * 10) % 3;
      switch (empCheck){
         case IS_FULL_TIME:
@@ -25,12 +27,10 @@ public static void main(String[] args){
        default:
               emphrs = 0;
        }
-     empwage = ERPH * emphrs;
-     totalempwage += empwage;
-     System.out.println("Employee wage: " + empwage);
+     totalemphrs += emphrs;
+     System.out.println("Days#: " + totalworkingdays + " Employee Hours: " +emphrs);
    }
+     int totalempwage = totalemphrs * ERPH;
      System.out.println("Total Employee Wage: " + totalempwage);
-
-  }
-
+ }
 }
