@@ -4,12 +4,20 @@ public class Empprob{
  public static void main(String[] args){
     // Constants
      int IS_FULL_TIME = 1;
+     int ERPH = 20;
+
+    // Variables
+     int emphrs = 0;
+     int empwage = 0;
+
     //Computation
      double empCheck = Math.floor(Math.random() * 10) % 2;
      if (empCheck == IS_FULL_TIME)
-        System.out.println("Employee is Present");
+         emphrs = 8;
      else
-        System.out.println("Employee is Absent");
+        emphrs = 0;
+     empwage = ERPH * emphrs;
+     System.out.println("Employee wage: " + empwage);
   }
 }
 
