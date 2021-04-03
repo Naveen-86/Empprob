@@ -6,7 +6,7 @@ public class Empprob{
   public static final int NOWD = 20;
   public static final int MHIM = 100;
 
-public static void main(String[] args){
+public static int computeempwage() {
 
     // Variables
      int emphrs = 0;
@@ -32,5 +32,9 @@ public static void main(String[] args){
    }
      int totalempwage = totalemphrs * ERPH;
      System.out.println("Total Employee Wage: " + totalempwage);
+     return totalempwage;
+  }
+    public static void main(String[] args) {
+       computeempwage();
  }
 }
