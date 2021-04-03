@@ -3,7 +3,20 @@ public class Empprob{
   public static final int IS_FULL_TIME = 1;
   public static final int IS_PART_TIME = 2;
 
-public static int computeempwage(String company, int ERPH, int NOWD, int MHIM) {
+  private final String company;
+  private final int ERPH;
+  private final int NOWD;
+  private final int MHIM;
+  private int totalempwage;
+
+public Empprob(String company, int ERPH, int NOWD, int MHIM) {
+       this.company = company;
+       this.ERPH = ERPH;
+       this.NOWD = NOWD;
+       this.MHIM = MHIM;
+  }
+
+public void computeempwage() {
 
     // Variables
      int emphrs = 0;
@@ -27,13 +40,18 @@ public static int computeempwage(String company, int ERPH, int NOWD, int MHIM) {
      totalemphrs += emphrs;
      System.out.println("Days#: " + totalworkingdays + " Employee Hours: " +emphrs);
    }
-     int totalempwage = totalemphrs * ERPH;
-     System.out.println("Total Employee Wage for company: " +company+" is: "+totalempwage);
-     return totalempwage;
+     totalempwage = totalemphrs * ERPH;
+  }
+    public String toString(){
+      return "Total Employee Wage for Company: " +company+ " is: " + totalempwage;
   }
     public static void main(String[] args) {
-       computeempwage("Reliance", 30, 26, 120);
-       computeempwage("Spencers", 25, 23, 110);
-       computeempwage("Dmart", 20, 20, 100);
+       Empprob dMart = new Empprob("Dmart", 30, 26, 120);
+       Empprob reliance = new Empprob("Reliance", 25, 23, 110);
+       dMart.computeempwage();
+       System.out.println(dMart);
+       reliance.computeempwage();
+       System.out.println(reliance);
  }
+
 }
